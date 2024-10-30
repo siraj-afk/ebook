@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'Screen2.dart';
+
 class Screen1 extends StatefulWidget {
   const Screen1({super.key});
 
@@ -199,115 +201,119 @@ class _Screen1State extends State<Screen1> {
                 ),
                 SizedBox(
                   height: 150,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        width: 290,
-                        height: 144,
-                        decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            shadows: [
-                              BoxShadow(
-                                color: Color(0x0C000000),
-                                blurRadius: 50,
-                                offset: Offset(0, 10),
-                                spreadRadius: 0,
-                              )
-                            ]),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: 100,
-                              height: 144,
-                              decoration:
-                                  BoxDecoration(color: Color(0xFFCBF5FF)),
-                              child: Center(
-                                  child: Image.asset('assets/image.png',
-                                      width: 68.18, height: 50)),
-                            ),
-                            SizedBox(
-                              width: 20.w,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'A Day of Fallen Night',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Playfair Display',
-                                    fontWeight: FontWeight.w500,
-                                    height: 0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 2,
-                                ),
-                                Text(
-                                  'Samantha Shannon',
-                                  style: TextStyle(
-                                    color: Color(0xFF505050),
-                                    fontSize: 12,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                Container(
-                                  width: 150,
-                                  height: 5,
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFFD9D9D9),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(8)),
-                                  ),
-                                ),
-                                SizedBox(height: 30.h,),
-
-                                Container(
-                                  width: 109,
-                                  height: 29,
-                                  decoration: ShapeDecoration(
-                                    color: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(width: 1, color: Color(0xFF404066)),
-                                      borderRadius: BorderRadius.circular(8),
+                  child: GestureDetector(onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Screen2()));
+                  },
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          width: 290,
+                          height: 144,
+                          decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              shadows: [
+                                BoxShadow(
+                                  color: Color(0x0C000000),
+                                  blurRadius: 50,
+                                  offset: Offset(0, 10),
+                                  spreadRadius: 0,
+                                )
+                              ]),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 144,
+                                decoration:
+                                    BoxDecoration(color: Color(0xFFCBF5FF)),
+                                child: Center(
+                                    child: Image.asset('assets/image.png',
+                                        width: 68.18, height: 50)),
+                              ),
+                              SizedBox(
+                                width: 20.w,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'A Day of Fallen Night',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontFamily: 'Playfair Display',
+                                      fontWeight: FontWeight.w500,
+                                      height: 0,
                                     ),
                                   ),
-                                  child:  Center(
-                                    child: Text(
-                                      'Update Progress',
-                                      style: TextStyle(
-                                        color: Color(0xFF404066),
-                                        fontSize: 11,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0,
+                                  SizedBox(
+                                    height: 4,
+                                  ),
+                                  Text(
+                                    'Samantha Shannon',
+                                    style: TextStyle(
+                                      color: Color(0xFF505050),
+                                      fontSize: 12,
+                                      fontFamily: 'Inter',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Container(
+                                    width: 150,
+                                    height: 5,
+                                    decoration: ShapeDecoration(
+                                      color: Color(0xFFD9D9D9),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                    ),
+                                  ),
+                                  SizedBox(height: 30.h,),
+
+                                  Container(
+                                    width: 109,
+                                    height: 29,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFF404066)),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                     ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(
-                        width: 5.w,
-                      );
-                    },
-                    itemCount: 3,
+                                    child:  Center(
+                                      child: Text(
+                                        'Update Progress',
+                                        style: TextStyle(
+                                          color: Color(0xFF404066),
+                                          fontSize: 11,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
+                                          height: 0,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return SizedBox(
+                          width: 5.w,
+                        );
+                      },
+                      itemCount: 3,
+                    ),
                   ),
                 ),
                 SizedBox(
