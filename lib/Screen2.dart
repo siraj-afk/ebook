@@ -66,7 +66,7 @@ class _Screen2State extends State<Screen2> {
                       ],
 
                     ),
-                    child: Image.asset('assets/image 5.png',fit: BoxFit.cover,),
+                    child: Image.asset('assets/image 8.png',fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(height: 30.h,),

@@ -376,7 +376,7 @@ class _Screen1State extends State<Screen1> {
                                     ),
                                   ),
                                 ),
-                                child: Center(child: Image.asset('assets/image 5.png')),
+                                child: Center(child: Image.asset('assets/image 8.png')),
                               ),
                               SizedBox(
                                 height: 3,
