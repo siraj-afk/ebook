@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Screen2 extends StatefulWidget {
@@ -20,7 +21,10 @@ class _Screen2State extends State<Screen2> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.arrow_circle_left_outlined,size: 30,),
+                    GestureDetector(onTap: (){
+                      Navigator.pop(context);
+                    },
+                        child: Icon(Icons.arrow_circle_left_outlined,size: 30,)),
                     SizedBox(width: 80.w),
                     Text(          'One Dark Window',
                       style: TextStyle(
@@ -186,7 +190,7 @@ class _Screen2State extends State<Screen2> {
                 ),
                 SizedBox(height: 20.h,),
                 SizedBox(
-                  width: 353,
+                  width: double.infinity,
                   child: Text(
                     'Elspeth needs a monster. The monster might be her. Elspeth Spindle needs more than luck to stay safe in the eerie, mist-locked kingdom of Blunder—she needs a monster. She calls him the Nightmare, an ancient, mercurial spirit trapped in her head. He protects her. He keeps her secrets.\n \nBut nothing comes for free, especially magic. When Elspeth meets a mysterious highwayman on the forest road, her life takes a drastic turn. Thrust into a world of shadow and deception, she joins a dangerous quest to cure Blunder from the dark magic infecting it. And the highwayman? He just so happens to be the King’s nephew, Captain of the most dangerous men in Blunder…and guilty of high treason.\n\nTogether they must gather twelve Providence Cards—the keys to the cure. But as the stakes heighten and their undeniable attraction intensifies, Elspeth is forced to face her darkest secret yet: the Nightmare is slowly taking over her mind. And she might not be able to stop him.',
                     style: TextStyle(
@@ -198,6 +202,7 @@ class _Screen2State extends State<Screen2> {
                     ),
                   ),
                 ),
+                SizedBox(height: 50.h,)
               ],
             ),
           ),
