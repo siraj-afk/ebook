@@ -231,8 +231,8 @@ class _Screen1State extends State<Screen1> {
                                 decoration:
                                     BoxDecoration(color: Color(0xFFCBF5FF)),
                                 child: Center(
-                                    child: Image.asset('assets/image.png',
-                                        width: 68.18, height: 50)),
+                                    child: Image.asset('assets/image 5.png',
+                                        width: 69.w, height: 105.h)),
                               ),
                               SizedBox(
                                 width: 20.w,
@@ -376,7 +376,7 @@ class _Screen1State extends State<Screen1> {
                                     ),
                                   ),
                                 ),
-                                child: Image.asset('assets/image.png'),
+                                child: Center(child: Image.asset('assets/image 5.png')),
                               ),
                               SizedBox(
                                 height: 3,

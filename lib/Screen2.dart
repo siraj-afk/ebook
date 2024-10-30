@@ -26,7 +26,7 @@ class _Screen2State extends State<Screen2> {
                     },
                         child: Icon(Icons.arrow_circle_left_outlined,size: 30,)),
                     SizedBox(width: 80.w),
-                    Text(          'One Dark Window',
+                    Text(  'One Dark Window',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -49,25 +49,27 @@ class _Screen2State extends State<Screen2> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20.h,),
+                SizedBox(height: 30.h,),
                 Center(
                   child: Container(
-                    width: 152.63,
-                    height: 240,
+                    width: 152.w,
+                    height: 240.h,
                     decoration: BoxDecoration(
 
                       boxShadow: [
                         BoxShadow(
                           color: Color(0x66193130),
                           blurRadius: 50,
-                          offset: Offset(0, 43),
-                          spreadRadius: 0,
+
+
                         )
                       ],
+
                     ),
+                    child: Image.asset('assets/image 5.png',fit: BoxFit.cover,),
                   ),
                 ),
-                SizedBox(height: 50.h,),
+                SizedBox(height: 30.h,),
                 Center(
                   child: Container(
                     width: 295,
