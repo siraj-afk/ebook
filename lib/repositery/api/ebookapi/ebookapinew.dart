@@ -13,13 +13,13 @@ class EbookApi {
   ApiClient apiClient = ApiClient();
 
 
-  Future<Ebook> getEbook() async {
+  Future<List<Ebook>> getEbook() async {
     String trendingpath = 'https://all-books-api.p.rapidapi.com/getBooks';
     var body = {
 
     };
     Response response = await apiClient.invokeAPI(trendingpath, 'GET', body);
 
-    return Ebook.fromJson(jsonDecode(response.body));
+    return Ebook.listFromJson(jsonDecode(response.body));
   }
 }

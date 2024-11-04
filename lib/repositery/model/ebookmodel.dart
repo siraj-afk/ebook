@@ -54,7 +54,11 @@ class Ebook {
     _data["bookRank"] = bookRank;
     return _data;
   }
-
+  static List<Ebook> listFromJson(List<dynamic> json) {
+    return json == null
+    ? []
+    : json.map((value) => Ebook.fromJson(value)).toList();
+  }
   Ebook copyWith({
     String? bookTitle,
     String? bookImage,
