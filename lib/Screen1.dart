@@ -271,14 +271,16 @@ class _Screen1State extends State<Screen1> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                         ebook[index].bookTitle.toString(),
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                            fontFamily: 'Playfair Display',
-                                            fontWeight: FontWeight.w500,
-                                            height: 0,
+                                        SizedBox(width: 120,
+                                          child: Text(
+                                           ebook[index].bookTitle.toString(),
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontFamily: 'Playfair Display',
+                                              fontWeight: FontWeight.w500,
+                                              height: 0,
+                                            ),
                                           ),
                                         ),
                                         SizedBox(
@@ -373,26 +375,25 @@ class _Screen1State extends State<Screen1> {
                 SizedBox(
                   height: 20.h,
                 ),
-                SizedBox(
-                  height: 400.h,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 12.0),
-                    child: BlocBuilder<EbookBloc, EbookState>(
-                      builder: (context, state) {
-                        if (state is EbookblocLoading) {
-                          return Center(child: CircularProgressIndicator());
-                        }
-                        if (state is EbookblocError) {
-                          return RefreshIndicator(
-                              child: Center(child: Text('error')),
-                              onRefresh: () async {
-                                return BlocProvider.of<EbookBloc>(context)
-                                    .add(FetchEbookEvent());
-                              });
-                        }
-                        if (state is EbookblocLoaded) {
-                          ebook = BlocProvider.of<EbookBloc>(context).ebook;
-                          return GridView.count(
+                Padding(
+                  padding: EdgeInsets.only(right: 12.0),
+                  child: BlocBuilder<EbookBloc, EbookState>(
+                    builder: (context, state) {
+                      if (state is EbookblocLoading) {
+                        return Center(child: CircularProgressIndicator());
+                      }
+                      if (state is EbookblocError) {
+                        return RefreshIndicator(
+                            child: Center(child: Text('error')),
+                            onRefresh: () async {
+                              return BlocProvider.of<EbookBloc>(context)
+                                  .add(FetchEbookEvent());
+                            });
+                      }
+                      if (state is EbookblocLoaded) {
+                        ebook = BlocProvider.of<EbookBloc>(context).ebook;
+                        return SizedBox(height:(275/2)* ebook.length,
+                          child: GridView.count(physics: NeverScrollableScrollPhysics(),
                             crossAxisCount: 2,
                             crossAxisSpacing: 10.0,
                             mainAxisSpacing: 10.0,
@@ -453,15 +454,17 @@ class _Screen1State extends State<Screen1> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Text(
-                                                  ebook[index].bookTitle.toString(),
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 16,
-                                                    fontFamily:
-                                                        'Playfair Display',
-                                                    fontWeight: FontWeight.w500,
-                                                    height: 0,
+                                                SizedBox(width: 80.w,
+                                                  child: Text(maxLines: 1,overflow: TextOverflow.ellipsis,
+                                                    ebook[index].bookTitle.toString(),
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 16,
+                                                      fontFamily:
+                                                          'Playfair Display',
+                                                      fontWeight: FontWeight.w500,
+                                                      height: 0,
+                                                    ),
                                                   ),
                                                 ),
                                                 Padding(
@@ -553,12 +556,12 @@ class _Screen1State extends State<Screen1> {
                                 ),
                               );
                             }),
-                          );
-                        } else {
-                          return SizedBox();
-                        }
-                      },
-                    ),
+                          ),
+                        );
+                      } else {
+                        return SizedBox();
+                      }
+                    },
                   ),
                 )
               ],
